@@ -50,6 +50,7 @@ fun SettingsGeneralScreen(
             "system" to stringResource(R.string.general_language_system),
             "en" to stringResource(R.string.general_language_en),
             "cs" to stringResource(R.string.general_language_cs),
+            "zh-CN" to stringResource(R.string.general_language_zh_cn),
         )
 
     LaunchedEffect(Unit) {

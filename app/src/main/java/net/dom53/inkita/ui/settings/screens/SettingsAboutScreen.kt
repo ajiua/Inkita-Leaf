@@ -272,7 +272,7 @@ fun SettingsAboutScreen(onBack: () -> Unit) {
             }
             Icon(
                 painter = painterResource(id = R.drawable.inkita_launcher_foreground),
-                contentDescription = "Inkita logo",
+                contentDescription = stringResource(R.string.settings_about_app_logo),
                 modifier = Modifier.size(32.dp),
                 tint = Color.Unspecified,
             )
@@ -356,7 +356,7 @@ fun SettingsAboutScreen(onBack: () -> Unit) {
                     .padding(vertical = 2.dp),
         )
         ListItem(
-            headlineContent = { Text("Help translate") },
+            headlineContent = { Text(stringResource(R.string.settings_about_help_transalate)) },
             leadingContent = {
                 Icon(
                     painterResource(id = R.drawable.ic_translate),

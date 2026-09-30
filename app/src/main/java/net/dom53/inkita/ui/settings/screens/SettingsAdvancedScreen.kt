@@ -890,7 +890,7 @@ fun SettingsAdvancedScreen(
             },
             modifier = Modifier.fillMaxWidth(),
         ) {
-            Text("Clear cache")
+            Text(stringResource(R.string.advanced_clear_cache))
         }
 
         if (showClearDialog) {

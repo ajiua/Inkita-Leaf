@@ -967,7 +967,11 @@ private fun FontSettings(
             alignItems.forEach { (align, icon) ->
                 val tint = if (align == textAlign) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface
                 IconButton(onClick = { onTextAlignChange(align) }) {
-                    Icon(icon, contentDescription = "Align $align", tint = tint)
+                    Icon(
+                        icon,
+                        contentDescription = stringResource(R.string.reader_alignment_description, align),
+                        tint = tint,
+                    )
                 }
             }
         }

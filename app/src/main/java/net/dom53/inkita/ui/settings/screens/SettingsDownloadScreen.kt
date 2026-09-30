@@ -517,7 +517,7 @@ private fun SelectionRow(
                 horizontalArrangement = Arrangement.spacedBy(4.dp),
             ) {
                 Text(selectedLabel, style = MaterialTheme.typography.bodyMedium)
-                Icon(Icons.Filled.ArrowDropDown, contentDescription = "Open menu")
+                Icon(Icons.Filled.ArrowDropDown, contentDescription = stringResource(R.string.general_open_menu))
             }
         }
 

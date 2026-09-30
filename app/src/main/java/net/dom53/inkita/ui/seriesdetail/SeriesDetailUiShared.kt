@@ -253,7 +253,7 @@ internal fun ChapterListV2(
                     overflow = TextOverflow.Ellipsis,
                 )
                 Text(
-                    text = "Ch. ${index + 1}",
+                    text = stringResource(net.dom53.inkita.R.string.general_chapter_short, index + 1),
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )

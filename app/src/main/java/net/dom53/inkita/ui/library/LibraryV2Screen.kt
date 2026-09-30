@@ -158,7 +158,7 @@ fun LibraryV2Screen(
                         .padding(16.dp)
                         .verticalScroll(rememberScrollState()),
             ) {
-                Text(text = "Menu", style = MaterialTheme.typography.titleMedium)
+                Text(text = stringResource(R.string.library_menu), style = MaterialTheme.typography.titleMedium)
                 Spacer(modifier = Modifier.height(12.dp))
                 DrawerItem(
                     icon = Icons.Filled.Home,
@@ -306,7 +306,7 @@ fun LibraryV2Screen(
                                 .verticalScroll(rememberScrollState()),
                     ) {
                         Text(
-                            text = "Home",
+                            text = stringResource(R.string.settings_cache_library_home_title),
                             style = MaterialTheme.typography.titleLarge,
                         )
                         Spacer(modifier = Modifier.height(12.dp))
@@ -805,7 +805,7 @@ private fun CollectionSeriesGrid(
         ) {
             Text(text = title, style = MaterialTheme.typography.titleMedium)
             Text(
-                text = "Back",
+                text = stringResource(R.string.general_back),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.clickable { onBack() },
@@ -895,7 +895,7 @@ private fun ReadingListCard(
                 .fillMaxWidth()
                 .clickable {
                     android.widget.Toast
-                        .makeText(context, "Not implemented yet", android.widget.Toast.LENGTH_SHORT)
+                        .makeText(context, context.getString(R.string.general_not_implemented), android.widget.Toast.LENGTH_SHORT)
                         .show()
                 },
     ) {
@@ -975,7 +975,7 @@ private fun PeopleGrid(
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
-                        text = "No people found.",
+                        text = stringResource(R.string.library_no_people),
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
@@ -996,7 +996,7 @@ private fun PeopleGrid(
                             config = config,
                             onClick = {
                                 android.widget.Toast
-                                    .makeText(context, "Not implemented yet", android.widget.Toast.LENGTH_SHORT)
+                                    .makeText(context, context.getString(R.string.general_not_implemented), android.widget.Toast.LENGTH_SHORT)
                                     .show()
                             },
                         )

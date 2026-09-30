@@ -6,6 +6,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import net.dom53.inkita.R
 
 @Composable
 fun UpdatesScreen() {
@@ -13,6 +15,6 @@ fun UpdatesScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
-        Text("Update (TODO)")
+        Text(stringResource(R.string.updates_todo))
     }
 }

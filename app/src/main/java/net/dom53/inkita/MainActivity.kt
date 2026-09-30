@@ -130,50 +130,29 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-private const val IMPORTANT_INFO_HEADER =
-    "✅ Image API key was added — please fill it in Kavita Settings."
-
 private val IMPORTANT_INFO_ADDED =
     listOf(
-        "Downloads V2: default Download API strategy for series/volume/chapter archives",
-        "Downloads V2: fallback DownloadApiStrategyV2 for unsupported formats",
-        "Downloads V2: normalized on-disk layout for series/volumes/chapters/specials",
-        "Downloads V2: image/archive chapter downloads stored as CBZ",
-        "Downloads V2: PDF downloads now show in the queue",
-        "Downloads V2: centralized download state for series/volume/chapter badges",
-        "Downloads V2: queue items show series/volume/chapter labels",
-        "Library/Browse: download badges on series covers",
-        "Settings: toggle to show/hide download badges",
-        "Settings: download stats dialog",
-        "Series Detail V2: tree view of downloaded files",
-        "Reader: offline Image/Archive reading from downloaded CBZ",
-        "Reader: basic Image/Archive reader (image pages + swipe)",
-        "Reader: image reader modes (LTR/RTL/Vertical)",
-        "Reader: PDF temp files cleaned on exit/startup unless downloaded",
-        "Series Detail V2: chapters list swipe read/unread + download",
-        "Series Detail V2: tap genre/tag to open Browse with filter",
-        "Series Detail V2: collection click opens Library V2 collection",
+        R.string.update_info_added_01, R.string.update_info_added_02, R.string.update_info_added_03,
+        R.string.update_info_added_04, R.string.update_info_added_05, R.string.update_info_added_06,
+        R.string.update_info_added_07, R.string.update_info_added_08, R.string.update_info_added_09,
+        R.string.update_info_added_10, R.string.update_info_added_11, R.string.update_info_added_12,
+        R.string.update_info_added_13, R.string.update_info_added_14, R.string.update_info_added_15,
+        R.string.update_info_added_16, R.string.update_info_added_17, R.string.update_info_added_18,
     )
 
 private val IMPORTANT_INFO_CHANGED =
     listOf(
-        "Downloads V2: PDF items open with correct MIME type",
-        "Downloads V2: queue/completed rows wrap titles cleanly",
-        "Reader: EpubReaderViewModel/PdfReaderViewModel split into separate files",
-        "Reader: navigation jumps across chapters at edges",
-        "Reader: next chapter prompts to mark current as read when leaving early",
-        "Reader: image/archive routing preserves format id",
-        "UI: rounded corners aligned across Library/Series/Volume covers",
-        "Series Detail: legacy screen/viewmodel removed",
-        "Downloads: legacy V1 download manager/DB removed",
-        "Library: legacy screen/viewmodel and cache APIs removed",
+        R.string.update_info_changed_01, R.string.update_info_changed_02, R.string.update_info_changed_03,
+        R.string.update_info_changed_04, R.string.update_info_changed_05, R.string.update_info_changed_06,
+        R.string.update_info_changed_07, R.string.update_info_changed_08, R.string.update_info_changed_09,
+        R.string.update_info_changed_10,
     )
 
 private val IMPORTANT_INFO_FIXED =
     listOf(
-        "Series Detail V2 cache defaults to enabled to prevent offline cache misses",
-        "History list no longer crashes due to duplicate LazyColumn keys",
-        "Bottom bar stays visible when opening Library/Browse via filters",
+        R.string.update_info_fixed_01,
+        R.string.update_info_fixed_02,
+        R.string.update_info_fixed_03,
     )
 
 private const val FORCE_SHOW_IMPORTANT_INFO = false
@@ -339,7 +318,7 @@ fun InkitaApp(
                             modifier = Modifier.fillMaxWidth(),
                         ) {
                             Text(
-                                text = IMPORTANT_INFO_HEADER,
+                                text = context.getString(R.string.update_info_header),
                                 style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold),
                             )
                             Spacer(modifier = Modifier.size(12.dp))
@@ -349,18 +328,18 @@ fun InkitaApp(
                             )
                             Spacer(modifier = Modifier.size(8.dp))
                             InfoSection(
-                                title = "✨ Added",
-                                items = IMPORTANT_INFO_ADDED,
+                                title = context.getString(R.string.update_info_added),
+                                items = IMPORTANT_INFO_ADDED.map { context.getString(it) },
                             )
                             Spacer(modifier = Modifier.size(10.dp))
                             InfoSection(
-                                title = "🔁 Changed",
-                                items = IMPORTANT_INFO_CHANGED,
+                                title = context.getString(R.string.update_info_changed),
+                                items = IMPORTANT_INFO_CHANGED.map { context.getString(it) },
                             )
                             Spacer(modifier = Modifier.size(10.dp))
                             InfoSection(
-                                title = "🛠️ Fixed",
-                                items = IMPORTANT_INFO_FIXED,
+                                title = context.getString(R.string.update_info_fixed),
+                                items = IMPORTANT_INFO_FIXED.map { context.getString(it) },
                             )
                         }
                     }
