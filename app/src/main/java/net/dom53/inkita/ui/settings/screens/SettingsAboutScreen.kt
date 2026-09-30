@@ -184,7 +184,7 @@ fun SettingsAboutScreen(onBack: () -> Unit) {
             val message =
                 withContext(Dispatchers.IO) {
                     try {
-                        val url = URL("https://dom-53.github.io/Inkita/updates.json")
+                        val url = URL("https://ajiua.github.io/Inkita-Leaf/updates.json")
                         val conn =
                             (url.openConnection() as HttpURLConnection).apply {
                                 connectTimeout = 5000
@@ -271,7 +271,7 @@ fun SettingsAboutScreen(onBack: () -> Unit) {
                 Icon(Icons.Filled.ArrowBack, contentDescription = stringResource(R.string.general_back))
             }
             Icon(
-                painter = painterResource(id = R.drawable.inkita_launcher_foreground),
+                painter = painterResource(id = R.mipmap.inkita_launcher_foreground_v2),
                 contentDescription = stringResource(R.string.settings_about_app_logo),
                 modifier = Modifier.size(32.dp),
                 tint = Color.Unspecified,
@@ -298,7 +298,7 @@ fun SettingsAboutScreen(onBack: () -> Unit) {
             leadingContent = { Icon(Icons.Filled.Update, contentDescription = null, modifier = Modifier.size(24.dp)) },
             modifier =
                 Modifier
-                    .clickable { openUrl("https://github.com/dom-53/Inkita/blob/develop/CHANGELOG.md") }
+                    .clickable { openUrl("https://github.com/ajiua/Inkita-Leaf/blob/master/CHANGELOG.md") }
                     .padding(vertical = 2.dp),
         )
 
@@ -336,7 +336,7 @@ fun SettingsAboutScreen(onBack: () -> Unit) {
             },
             modifier =
                 Modifier
-                    .clickable { openUrl("https://github.com/dom-53/Inkita") }
+                    .clickable { openUrl("https://github.com/ajiua/Inkita-Leaf") }
                     .padding(vertical = 2.dp),
         )
 

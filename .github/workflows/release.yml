@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   build-and-release:
     name: Build & Release APK
@@ -145,8 +148,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git fetch origin gh-pages
-          git worktree add /tmp/gh-pages gh-pages
+          if git ls-remote --exit-code --heads origin gh-pages; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add /tmp/gh-pages gh-pages
+          else
+            git worktree add --detach /tmp/gh-pages HEAD
+            cd /tmp/gh-pages
+            git switch --orphan gh-pages
+            cd "${GITHUB_WORKSPACE}"
+          fi
           cd /tmp/gh-pages
 
           # keep only docs/updates.json
@@ -164,7 +174,7 @@ jobs:
             "channel": "${CHANNEL}",
             "version": "${VERSION_NAME}",
             "versionCode": ${VERSION_CODE},
-            "url": "https://github.com/dom-53/Inkita/releases/download/${TAG}/inkita-universal-v${VERSION_NAME}.apk",
+            "url": "https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/inkita-universal-v${VERSION_NAME}.apk",
             "sha256": "${SHA}"
           }
           EOF
