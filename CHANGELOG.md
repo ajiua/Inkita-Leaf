@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented here.
 
+## v0.3.2-beta
+
+### 新增
+- 增加完整的简体中文界面，共覆盖 561 个字符串资源。
+- 增加简体中文应用内语言选项及 Android 系统语言声明。
+- 使用新的 Inkita Leaf 启动图标、圆形图标、自适应图标和商店图标。
+
+### 变更
+- 自动更新地址切换至 `ajiua/Inkita-Leaf` 的 GitHub Pages 与 Releases。
+- GitHub Actions 发布流程支持首次创建 `gh-pages` 分支，并使用当前仓库生成 APK 下载地址。
+- README 全面改为中文，并保留对原项目 `dom-53/Inkita` 的来源说明与署名。
+- 将界面中残留的部分英文硬编码迁移到本地化资源。
+
 ## v0.3.1-beta
 
 ### Added
